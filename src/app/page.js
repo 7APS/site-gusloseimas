@@ -1,4 +1,5 @@
 import ImageCarousel from "../components/ImageCarousel";
+import Image from "next/image";
 
 import bolo1 from "../../public/products/bolo1.png";
 import bolo2 from "../../public/products/bolo2.jpg";
@@ -12,7 +13,7 @@ export default function Home() {
     return (
       <>
         <div className="flex justify-center">
-          <img
+          <Image
             src={imgSrx}
             alt={imgAlt}
             className="flex w-80 object-cover mb-4 rounded"
@@ -26,13 +27,8 @@ export default function Home() {
   }
 
   function productSectionItem(items) {
-    return items.map(({ imgs, description }) => (
-      <li className="bg-white rounded shadow p-4">
-        {/* <img
-          src={imgSrc}
-          alt={name}
-          className="w-full h-48 object-cover mb-4 rounded"
-        /> */}
+    return items.map(({ imgs, description }, index) => (
+      <li key={`key-${index}`} className="bg-white rounded shadow p-4">
         {imgs &&
           <ImageCarousel images={
             imgs.map(i => {
@@ -53,7 +49,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 font-serif">
       <div className="w-full bg-rose-100 py-16 justify-center flex">
-        <img
+        <Image
           src="/logoBigger.png"
           alt="Banner"
           className="w-auto h-80 flex"
@@ -215,7 +211,7 @@ export default function Home() {
               href="https://www.facebook.com/docesgus"
               className="text-purple-500 hover:text-purple-700 transform hover:translate-y-1 transition-all duration-200"
             >
-              <img
+              <Image
                 src="/facebook.png"
                 className="w-16 h-16 fill-current"
                 alt="face"
@@ -225,7 +221,7 @@ export default function Home() {
               href="https://www.instagram.com/gusloseimas/"
               className="text-purple-500 hover:text-purple-700 transform hover:translate-y-1 transition-all duration-200"
             >
-              <img
+              <Image
                 src="/instagram.png"
                 className="w-16 h-16 fill-current"
                 alt="instagram"
@@ -235,7 +231,7 @@ export default function Home() {
               href="https://www.tiktok.com/@gusloseimas?lang=pt-BR"
               className="text-purple-500 hover:text-purple-700 transform hover:translate-y-1 transition-all duration-200"
             >
-              <img
+              <Image
                 src="/tiktok.png"
                 className="w-16 h-16 fill-current"
                 alt="tiktok"
@@ -245,7 +241,7 @@ export default function Home() {
               href="https://api.whatsapp.com/send?phone=5545988214352&fbclid=PAAabaHtAwzbeeED42Ho_xvyZXH_5bEOVxvUtHlFGOms50S0QGviZc_31YDTE"
               className="text-purple-500 hover:text-purple-700 transform hover:translate-y-1 transition-all duration-200"
             >
-              <img
+              <Image
                 src="/whatsapp.png"
                 className="w-16 h-16 fill-current"
                 alt="whatsapp"
