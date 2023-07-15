@@ -158,17 +158,17 @@ export default function Home() {
             <br />
             Naquela época, os biscoitos já eram apreciados como pequenos pães
             crocantes, assados duas vezes para prolongar sua vida útil.
-            <br />O termo "biscoito" deriva do latim, onde "bis" significa dois
-            e "coctus" significa cozido.
+            <br />O termo &quot;biscoito&quot; deriva do latim, onde &quot;bis&quot; significa dois
+            e &quot;coctus&quot; significa cozido.
             <br />
             No século XVII, na Inglaterra, os cozinheiros descobriram por acaso
             que um pedaço de massa usado para testar a temperatura do forno se
-            transformava em deliciosos biscoitos. Logo, esses "pequenos bolos"
+            transformava em deliciosos biscoitos. Logo, esses &quot;pequenos bolos&quot;
             passaram a ser feitos intencionalmente, evitando o desperdício de
             massa.
             <br />
-            <br />O termo <b>"cookie"</b> tem origem na palavra holandesa
-            "koekje", que significa "pequeno bolo".
+            <br />O termo <b>&quot;cookie&quot;</b> tem origem na palavra holandesa
+            &quot;koekje&quot;, que significa &quot;pequeno bolo&quot;.
             <br />
             Os cookies se tornaram populares na Europa e, posteriormente, foram
             levados para os Estados Unidos pelos colonizadores ingleses. Foi lá
