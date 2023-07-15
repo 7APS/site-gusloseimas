@@ -248,11 +248,11 @@ export default function Home() {
               imgs: [
                 {
                   imgSrc: pacoquinha_1,
-                  name: "Paçoquina",
+                  name: "Paçoquita",
                 },
                 {
                   imgSrc: pacoquinha_2,
-                  name: "Paçoquina por dentro",
+                  name: "Paçoquita por dentro",
                 },
               ],
               description:
