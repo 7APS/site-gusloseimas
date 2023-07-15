@@ -5,10 +5,10 @@ import "./style.css";
 import logo from "../../public/logoBigger.png";
 import bichoDePe_1 from "../../public/products/bichoDePe_1.jpg";
 import bichoDePe_2 from "../../public/products/bichoDePe_2.jpg";
-import newYorkCity_1 from "../../public/products/newYorkCity_1.jpg";
-import newYorkCity_2 from "../../public/products/newYorkCity_2.jpg";
+import newYorkCity_1 from "../../public/products/newYorkCity_1.1.jpg";
+import newYorkCity_2 from "../../public/products/newYorkCity_2.1.jpg";
 import triploChocolate_1 from "../../public/products/triploChocolate_1.jpg";
-import triploChocolate_2 from "../../public/products/triploChocolate_2.jpg";
+import triploChocolate_2 from "../../public/products/triploChocolate_2.1.jpg";
 import nutella_1 from "../../public/products/nutella_1.jpg";
 import nutella_2 from "../../public/products/nutella_2.jpg";
 import milhoCoco_1 from "../../public/products/milhoCoco_1.jpg";
@@ -127,7 +127,7 @@ export default function Home() {
       {/* Parallax 1 */}
       <section class="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img">
         <div class="p-5 text-2xl text-white bg-red-300 bg-opacity-50 rounded-xl">
-          Lambuze-se com moderação! 😋😋
+          Deixando sua via ainda mais doce! 😋😋
         </div>
       </section>
 

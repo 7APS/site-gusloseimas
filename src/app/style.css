@@ -1,6 +1,18 @@
-.custom-img {
-  background-image: url("../../public/bb1.jpg");
+/* celular */
+@media (max-width: 574px) {
+  .custom-img {
+    background-image: url("../../public/bb2.jpg");
+  }
+  .custom-img-2 {
+    background-image: url("../../public/products/nutella_2.jpg");
+  }
 }
-.custom-img-2 {
-  background-image: url("../../public/bb4.jpg");
-}
+/* desktop */
+@media (min-width: 574px) {
+    .custom-img {
+      background-image: url("../../public/bb4.jpg");
+    }
+    .custom-img-2 {
+      background-image: url("../../public/bb6.jpg");
+    }
+  }
