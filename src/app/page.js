@@ -127,7 +127,7 @@ export default function Home() {
       {/* Parallax 1 */}
       <section class="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img">
         <div class="p-5 text-2xl text-white bg-red-300 bg-opacity-50 rounded-xl">
-          Deixando sua via ainda mais doce! 😋😋
+          Deixando sua vida ainda mais doce! 😋😋
         </div>
       </section>
 
