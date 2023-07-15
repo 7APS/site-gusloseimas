@@ -15,7 +15,7 @@ import nutella_2 from "../../public/products/nutella_2.jpg";
 import milhoCoco_1 from "../../public/products/milhoCoco_1.jpg";
 import pacoquinha_1 from "../../public/products/pacoquinha_1.jpg";
 import pacoquinha_2 from "../../public/products/pacoquinha_2.jpg";
-import noImage from "../../public/products/noImage.png";
+// import noImage from "../../public/products/noImage.png";
 
 export default function Home() {
   function productSection(imgSrx, imgAlt, itemsList) {
@@ -85,7 +85,7 @@ export default function Home() {
           <a className="p-2 cursor-pointer" href="#produtos">
             Produtos
           </a>
-          <a className="p-2 cursor-pointer absolute right-5">
+          <a className="p-2 cursor-pointer absolute right-5 invisible lg:visible md:visible">
             <div id="social" className="flex space-x-4">
               {renderSocial(
                 "https://www.facebook.com/gusloseimas.cookies",
