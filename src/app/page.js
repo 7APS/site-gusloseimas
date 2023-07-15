@@ -7,8 +7,9 @@ import bichoDePe_1 from "../../public/products/bichoDePe_1.jpg";
 import bichoDePe_2 from "../../public/products/bichoDePe_2.jpg";
 import newYorkCity_1 from "../../public/products/newYorkCity_1.1.jpg";
 import newYorkCity_2 from "../../public/products/newYorkCity_2.1.jpg";
-import triploChocolate_1 from "../../public/products/triploChocolate_1.jpg";
 import triploChocolate_2 from "../../public/products/triploChocolate_2.1.jpg";
+import triploChocolate_3 from "../../public/products/triploChocolate_3.jpg";
+import triploChocolate_4 from "../../public/products/triploChocolate_4.jpg";
 import nutella_1 from "../../public/products/nutella_1.jpg";
 import nutella_2 from "../../public/products/nutella_2.jpg";
 import milhoCoco_1 from "../../public/products/milhoCoco_1.jpg";
@@ -150,7 +151,7 @@ export default function Home() {
           </p>
           <br />
           <h3 id="historia" className="text-3xl font-bold mb-4 text-gray-700">
-            História
+            História do Cookie
           </h3>
           <p className="text-gray-600 text-justify">
             Os cookies têm uma história fascinante que remonta à Idade Média.
@@ -228,16 +229,20 @@ export default function Home() {
             {
               imgs: [
                 {
-                  imgSrc: triploChocolate_1,
+                  imgSrc: triploChocolate_3,
                   name: "Triplo Chocolate",
                 },
                 {
                   imgSrc: triploChocolate_2,
                   name: "Triplo Chocolate por dentro",
                 },
+                {
+                  imgSrc: triploChocolate_4,
+                  name: "Triplo Chocolate por dentro",
+                },
               ],
               description:
-                "Massa de cacau black com muitas gotas de chocolate branco e recheado com chocolate ao leite. A união perfeita de chocolates. Também temos a versão com gotas de chocolate ao leite e recheio de chocolate branco. Não tem como não ao amar esse trio.",
+                "Massa de cacau black com muitas gotas de chocolate branco e recheado com chocolate ao leite. A união perfeita de chocolates. Também temos a versão com gotas de chocolate ao leite e recheio de chocolate branco. Não tem como não amar esse trio.",
             },
             {
               imgs: [
