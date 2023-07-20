@@ -22,11 +22,13 @@ import pacoquinha_2 from "../../public/products/pacoquinha_2.jpg";
 import katia from "../../public/katia.jpeg";
 // import noImage from "../../public/products/noImage.png";
 
+const KEY = process.env.KEY;
+
 export default function Home() {
   useEffect(() => {
     const loadMap = () => {
       const googleMapsScript = document.createElement("script");
-      googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyD81jOdjhyWW2jQbRxCNRe0deridnHE0To&callback=initMap`;
+      googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=${KEY}&callback=initMap`;
       googleMapsScript.async = true;
       googleMapsScript.defer = true;
       window.initMap = initMap;
@@ -114,7 +116,7 @@ export default function Home() {
           <a
             className="p-2 cursor-pointer hover:font-bold hover:bg-slate-100"
             href="#sobre"
-          >
+            >
             Sobre
           </a>
           <a
@@ -174,8 +176,8 @@ export default function Home() {
       </div>
 
       {/* Parallax 1 */}
-      <section class="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img">
-        <div class="p-5 text-2xl text-white bg-red-300 bg-opacity-50 rounded-xl">
+      <section className="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img">
+        <div className="p-5 text-2xl text-white bg-red-300 bg-opacity-50 rounded-xl">
           Deixando sua vida ainda mais doce! 😋😋
         </div>
       </section>
@@ -250,7 +252,7 @@ export default function Home() {
       </section>
 
       {/* Parallax 2 */}
-      <section class="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img-2"></section>
+      <section className="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img-2"></section>
 
       {/* produtos */}
       <div className="container mx-auto px-4 py-8 font-sans bg-red-200">

@@ -40,7 +40,6 @@ const ImageCarousel = ({ images, description }) => {
               <Image
                 src={images[currentImage].src}
                 alt={images[currentImage].name}
-                layout="responsive"
                 width={200}
                 height={200}
                 className="transition duration-300 transform hover:scale-110 h-96 w-80"
