@@ -1,3 +1,7 @@
+"use client";
+
+import React, { useEffect } from "react";
+
 import ImageCarousel from "../components/ImageCarousel";
 import Image from "next/image";
 import "./style.css";
@@ -15,13 +19,43 @@ import nutella_2 from "../../public/products/nutella_2.jpg";
 import milhoCoco_1 from "../../public/products/milhoCoco_1.jpg";
 import pacoquinha_1 from "../../public/products/pacoquinha_1.jpg";
 import pacoquinha_2 from "../../public/products/pacoquinha_2.jpg";
+import katia from "../../public/katia.jpeg";
 // import noImage from "../../public/products/noImage.png";
 
 export default function Home() {
+  useEffect(() => {
+    const loadMap = () => {
+      const googleMapsScript = document.createElement("script");
+      googleMapsScript.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyD81jOdjhyWW2jQbRxCNRe0deridnHE0To&callback=initMap`;
+      googleMapsScript.async = true;
+      googleMapsScript.defer = true;
+      window.initMap = initMap;
+      document.head.appendChild(googleMapsScript);
+    };
+
+    const initMap = () => {
+      const mapOptions = {
+        center: { lat: -24.95381041860895, lng: -53.454155594180236 },
+        zoom: 13,
+      };
+      const map = new window.google.maps.Map(
+        document.getElementById("map"),
+        mapOptions
+      );
+      // const marker = new window.google.maps.Marker({
+      //   position: { lat: -23.5505, lng: -46.6333 },
+      //   map,
+      //   title: "Localização do Marcador",
+      // });
+    };
+
+    loadMap();
+  }, []);
+
   function productSection(imgSrx, imgAlt, itemsList) {
     return (
       <>
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-8 pb-10">
           <Image
             src={imgSrx}
             alt={imgAlt}
@@ -42,6 +76,7 @@ export default function Home() {
       <li key={`key-${index}`} className="bg-white rounded shadow p-4">
         {imgs && (
           <ImageCarousel
+            description={description}
             images={imgs.map((i) => {
               return {
                 src: i.imgSrc,
@@ -74,15 +109,24 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 font-serif">
       {/* menu */}
-      <div className="w-full">
+      <div className="w-full bg-gray-100 z-10">
         <la className="text-gray-600 p-2 flex justify-center font-sans">
-          <a className="p-2 cursor-pointer" href="#sobre">
+          <a
+            className="p-2 cursor-pointer hover:font-bold hover:bg-slate-100"
+            href="#sobre"
+          >
             Sobre
           </a>
-          <a className="p-2 cursor-pointer" href="#historia">
+          <a
+            className="p-2 cursor-pointer hover:font-bold hover:bg-slate-100"
+            href="#historia"
+          >
             História
           </a>
-          <a className="p-2 cursor-pointer" href="#produtos">
+          <a
+            className="p-2 cursor-pointer hover:font-bold hover:bg-slate-100"
+            href="#produtos"
+          >
             Produtos
           </a>
           <a className="p-2 cursor-pointer absolute right-5 invisible lg:visible md:visible">
@@ -121,8 +165,12 @@ export default function Home() {
       </div>
 
       {/* banner */}
-      <div className="w-full bg-rose-100 py-40 justify-center flex">
-        <Image src={logo} alt="Banner" className="w-auto h-80 flex" />
+      <div className="w-full h-screen bg-rose-100 py-40 justify-center flex">
+        <Image
+          src={logo}
+          alt="Banner"
+          className="w-auto h-96 flex transition duration-300 transform hover:scale-110"
+        />
       </div>
 
       {/* Parallax 1 */}
@@ -133,68 +181,83 @@ export default function Home() {
       </section>
 
       {/* sobre e história */}
-      <div className="container mx-auto px-4 py-8 font-sans">
-        <section className="mb-8">
-          <h2 id="sobre" className="text-3xl font-bold mb-4 text-gray-700">
+      <section className="mb-8">
+        <div className="container mx-auto px-4 py-8 font-sans max-w-screen-md">
+          <h2 id="sobre" className="text-3xl font-bold mb-2 text-gray-700">
             Sobre Nós
           </h2>
-          <p className="text-gray-600">
-            Oi, Eu sou a <b>Kátia</b>, mãe do Gus, esposa do Luiz além de
-            mulher, psicóloga, de peixes, terráqueo e apaixonada por cozinhar.
+          <div className="grid sm:flex justify-items-center">
+            <p className="text-gray-600 pt-3">
+              Oi, Eu sou a <b>Kátia</b>, mãe do Gus, esposa do Luiz além de
+              mulher, psicóloga, de peixes, terráqueo e apaixonada por cozinhar.
+              <br />
+              <br />
+              A Gusloseimas foi criada por uma mãe que ama cozinhar e decidiu
+              estudar e se aprimorar na confeitaria.
+              <br />
+              Nosso objetivo é levar doçura e felicidade em cada mordida,
+              deixando a vida de nossos clientes ainda mais doce.
+            </p>
             <br />
-            <br />
-            A Gusloseimas foi criada por uma mãe que ama cozinhar e decidiu
-            estudar e se aprimorar na confeitaria.
-            <br />
-            Nosso objetivo é levar doçura e felicidade em cada mordida, deixando
-            a vida de nossos clientes ainda mais doce.
-          </p>
+            <Image
+              src={katia}
+              alt="oi"
+              width={160}
+              height={160}
+              className="!w-40 !h-40 object-fill mt-4 rounded-full "
+            />
+          </div>
+          <br />
           <br />
           <h3 id="historia" className="text-3xl font-bold mb-4 text-gray-700">
             História do Cookie
           </h3>
-          <p className="text-gray-600 text-justify">
-            Os cookies têm uma história fascinante que remonta à Idade Média.
-            <br />
-            <br />
-            Naquela época, os biscoitos já eram apreciados como pequenos pães
-            crocantes, assados duas vezes para prolongar sua vida útil.
-            <br />O termo &quot;biscoito&quot; deriva do latim, onde &quot;bis&quot; significa dois
-            e &quot;coctus&quot; significa cozido.
-            <br />
-            No século XVII, na Inglaterra, os cozinheiros descobriram por acaso
-            que um pedaço de massa usado para testar a temperatura do forno se
-            transformava em deliciosos biscoitos. Logo, esses &quot;pequenos bolos&quot;
-            passaram a ser feitos intencionalmente, evitando o desperdício de
-            massa.
-            <br />
-            <br />O termo <b>&quot;cookie&quot;</b> tem origem na palavra holandesa
-            &quot;koekje&quot;, que significa &quot;pequeno bolo&quot;.
-            <br />
-            Os cookies se tornaram populares na Europa e, posteriormente, foram
-            levados para os Estados Unidos pelos colonizadores ingleses. Foi lá
-            que eles evoluíram para a receita de cookies que conhecemos e amamos
-            hoje.
-            <br />
-            Já os cookies com gotas de chocolate foram inventados pela americana
-            Ruth Wakefield, em 1930. Ela e seu marido tinham um pequeno
-            restaurante em Boston e Ruth resolveu experimentar uma nova receita
-            de bolo colocando pedacinhos de chocolate meio amargo.
-          </p>
-        </section>
-      </div>
+          <div className="grid sm:flex justify-items-center">
+            <p className="text-gray-600 text-justify">
+              Os cookies têm uma história fascinante que remonta à Idade Média.
+              <br />
+              <br />
+              Naquela época, os biscoitos já eram apreciados como pequenos pães
+              crocantes, assados duas vezes para prolongar sua vida útil.
+              <br />O termo &quot;biscoito&quot; deriva do latim, onde
+              &quot;bis&quot; significa dois e &quot;coctus&quot; significa
+              cozido.
+              <br />
+              No século XVII, na Inglaterra, os cozinheiros descobriram por
+              acaso que um pedaço de massa usado para testar a temperatura do
+              forno se transformava em deliciosos biscoitos. Logo, esses
+              &quot;pequenos bolos&quot; passaram a ser feitos intencionalmente,
+              evitando o desperdício de massa.
+              <br />
+              <br />O termo <b>&quot;cookie&quot;</b> tem origem na palavra
+              holandesa &quot;koekje&quot;, que significa &quot;pequeno
+              bolo&quot;.
+              <br />
+              Os cookies se tornaram populares na Europa e, posteriormente,
+              foram levados para os Estados Unidos pelos colonizadores ingleses.
+              Foi lá que eles evoluíram para a receita de cookies que conhecemos
+              e amamos hoje.
+              <br />
+              Já os cookies com gotas de chocolate foram inventados pela
+              americana Ruth Wakefield, em 1930. Ela e seu marido tinham um
+              pequeno restaurante em Boston e Ruth resolveu experimentar uma
+              nova receita de bolo colocando pedacinhos de chocolate meio
+              amargo.
+            </p>
+          </div>
+          <br />
+        </div>
+      </section>
 
       {/* Parallax 2 */}
-      <section class="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img-2">
-
-      </section>
+      <section class="container flex items-center justify-center h-screen m-auto mb-12 bg-fixed bg-center bg-cover custom-img-2"></section>
 
       {/* produtos */}
       <div className="container mx-auto px-4 py-8 font-sans bg-red-200">
         <section className="mb-8">
-          <h2 id="produtos" className="text-3xl font-bold mb-4 text-gray-700">
+          {/* <h2 id="produtos" className="text-3xl font-bold mb-4 text-gray-700">
             Produtos
-          </h2>
+          </h2> */}
 
           {/* Cookies */}
           {productSection("/products/separators/cookies.png", "cookies", [
@@ -285,6 +348,8 @@ export default function Home() {
           ])}
         </section>
       </div>
+
+      <section className="container w-full h-96 flex" id="map"></section>
 
       {/* social */}
       <section className="mb-8 bg:white pt-10">

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import Modal from "../Modal";
 
-const ImageCarousel = ({ images }) => {
+const ImageCarousel = ({ images, description }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [selectedImage, setSelectedImage] = useState(null);
   const [showModal, setShowModal] = useState(false);
@@ -34,7 +34,7 @@ const ImageCarousel = ({ images }) => {
   return (
     <div className="relative">
       {images.map((image, index) => (
-        <div key={index} className="relative cursor-pointer">
+        <div key={index} className="relative items-center">
           {index == currentImage && (
             <>
               <Image
@@ -43,7 +43,7 @@ const ImageCarousel = ({ images }) => {
                 layout="responsive"
                 width={200}
                 height={200}
-                className="transition duration-300 transform hover:scale-110 h-52 w-52"
+                className="transition duration-300 transform hover:scale-110 h-96 w-80"
                 onClick={() => openModal(image)}
               />
               {lengthImages > 1 && (
@@ -70,7 +70,7 @@ const ImageCarousel = ({ images }) => {
           )}
         </div>
       ))}
-      {showModal && <Modal image={selectedImage} closeModal={closeModal} />}
+      {/* {showModal && <Modal image={selectedImage} description={description} closeModal={closeModal} />} */}
     </div>
   );
 };
