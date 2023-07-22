@@ -66,7 +66,7 @@ export default function Home() {
             className="flex w-80 object-cover mb-4 rounded"
           />
         </div>
-        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-center">
           {productSectionItem(itemsList)}
         </ul>
       </>
@@ -75,7 +75,7 @@ export default function Home() {
 
   function productSectionItem(items) {
     return items.map(({ imgs, description }, index) => (
-      <li key={`key-${index}`} className="bg-white rounded shadow p-4">
+      <li key={`key-${index}`} className="bg-white rounded shadow p-4 text-center">
         {imgs && (
           <ImageCarousel
             description={description}

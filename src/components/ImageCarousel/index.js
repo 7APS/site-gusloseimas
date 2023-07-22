@@ -34,7 +34,7 @@ const ImageCarousel = ({ images, description }) => {
   return (
     <div className="relative">
       {images.map((image, index) => (
-        <div key={index} className="relative items-center">
+        <div key={index} className="relative items-center flex justify-center">
           {index == currentImage && (
             <>
               <Image
@@ -42,7 +42,7 @@ const ImageCarousel = ({ images, description }) => {
                 alt={images[currentImage].name}
                 width={200}
                 height={200}
-                className="transition duration-300 transform hover:scale-110 h-96 w-80"
+                className="transition duration-300 transform hover:scale-110 h-80 w-80 rounded object-cover pt-8"
                 onClick={() => openModal(image)}
               />
               {lengthImages > 1 && (
