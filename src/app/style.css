@@ -9,10 +9,10 @@
 }
 /* desktop */
 @media (min-width: 574px) {
-    .custom-img {
-      background-image: url("../../public/bb4.jpg");
-    }
-    .custom-img-2 {
-      background-image: url("../../public/bb6.jpg");
-    }
+  .custom-img {
+    background-image: url("../../public/bb4.jpg");
   }
+  .custom-img-2 {
+    background-image: url("../../public/bb6.jpg");
+  }
+}

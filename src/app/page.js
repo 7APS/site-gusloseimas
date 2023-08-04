@@ -75,7 +75,10 @@ export default function Home() {
 
   function productSectionItem(items) {
     return items.map(({ imgs, description }, index) => (
-      <li key={`key-${index}`} className="bg-white rounded shadow p-4 text-center">
+      <li
+        key={`key-${index}`}
+        className="bg-white rounded shadow p-4 text-center"
+      >
         {imgs && (
           <ImageCarousel
             description={description}
@@ -116,7 +119,7 @@ export default function Home() {
           <a
             className="p-2 cursor-pointer hover:font-bold hover:bg-slate-100"
             href="#sobre"
-            >
+          >
             Sobre
           </a>
           <a
