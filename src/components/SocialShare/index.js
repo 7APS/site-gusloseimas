@@ -4,7 +4,7 @@ import React from 'react';
 
 const SocialShare = ({ url, title, description }) => {
   // Encode parameters for sharing
-  const encodedUrl = encodeURIComponent(url || 'https://www.gusloseimas.com.br');
+  const encodedUrl = encodeURIComponent(url || 'https://www.gusloseimas.com');
   const encodedTitle = encodeURIComponent(title || 'Gusloseimas - Cookies e Bolos Artesanais');
   const encodedDescription = encodeURIComponent(
     description || 'Confeitaria gourmet especializada em cookies e bolos para festas e eventos. Deixando sua vida ainda mais doce!'

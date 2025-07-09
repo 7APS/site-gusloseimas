@@ -90,5 +90,5 @@ Para encomendas e informações:
 ---
 
 <p align="center">
-  Desenvolvido com ❤️ por <a href="https://www.7aps.com.br">7APS</a>
+  Desenvolvido com ❤️ por <a href="https://www.luizcasara.com">7APS</a>
 </p>

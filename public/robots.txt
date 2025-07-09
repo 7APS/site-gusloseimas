@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.gusloseimas.com.br/sitemap.xml
+Sitemap: https://www.gusloseimas.com/sitemap.xml

@@ -7,7 +7,7 @@ export const metadata = {
     openGraph: {
         type: "website",
         locale: "pt_BR",
-        url: "https://www.gusloseimas.com.br",
+        url: "https://www.gusloseimas.com",
         siteName: "Gusloseimas",
         title: "Gusloseimas - Cookies e Bolos Artesanais",
         description: "Confeitaria gourmet especializada em cookies e bolos para festas e eventos. Deixando sua vida ainda mais doce!",
@@ -33,7 +33,7 @@ export const metadata = {
 
     // Canonical URL
     alternates: {
-        canonical: "https://www.gusloseimas.com.br",
+        canonical: "https://www.gusloseimas.com",
     },
 
     // Additional metadata

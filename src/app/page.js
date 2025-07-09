@@ -356,7 +356,7 @@ export default function Home() {
 
                             <div className="mt-4 md:mt-0">
                                 <SocialShare
-                                    url="https://www.gusloseimas.com.br/#galeria"
+                                    url="https://www.gusloseimas.com/#galeria"
                                     title="Confira os deliciosos produtos da Gusloseimas para eventos!"
                                     description="Cookies e bolos artesanais para tornar seu evento ainda mais especial. Confira a galeria de eventos da Gusloseimas."
                                 />
