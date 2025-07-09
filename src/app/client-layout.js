@@ -1,11 +1,12 @@
 "use client"
 
-import {useEffect} from "react";
+import {useEffect, Suspense} from "react";
 import {usePathname, useSearchParams} from "next/navigation";
 import Analytics from "@/components/Analytics";
 import * as gtag from "@/libs/gtag";
 
-export default function ClientLayout({children}) {
+// Component that uses searchParams
+function SearchParamsComponent() {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
@@ -16,9 +17,16 @@ export default function ClientLayout({children}) {
         }
     }, [pathname, searchParams]);
 
+    return null;
+}
+
+export default function ClientLayout({children}) {
     return (
         <>
             <Analytics/>
+            <Suspense fallback={null}>
+                <SearchParamsComponent />
+            </Suspense>
             {children}
         </>
     );

@@ -1,8 +1,10 @@
 import Script from "next/script";
 import { GA_TRACKING_ID } from "@/libs/gtag";
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 
 const Analytics = () => (
   <>
+    {/* Google Analytics */}
     <Script
       strategy="afterInteractive"
       src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -21,6 +23,9 @@ const Analytics = () => (
           `,
       }}
     />
+
+    {/* Vercel Analytics */}
+    <VercelAnalytics />
   </>
 );
 

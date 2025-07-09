@@ -38,8 +38,13 @@ export const metadata = {
 
     // Additional metadata
     robots: "index, follow",
-    themeColor: "#FFC0CB", // Pink theme color
-    viewport: "width=device-width, initial-scale=1",
     creator: "Gusloseimas",
     publisher: "Gusloseimas",
+};
+
+// Viewport export for Next.js 14
+export const viewport = {
+    width: "device-width",
+    initialScale: 1,
+    themeColor: "#FFC0CB", // Pink theme color
 };
