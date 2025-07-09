@@ -1,38 +1,36 @@
 "use client"
 
-import { useEffect } from "react";
-import { Router } from "next/router";
-import { Inter } from "next/font/google";
+import {useEffect} from "react";
+import {usePathname, useSearchParams} from "next/navigation";
+import {Quicksand} from "next/font/google";
 
 import Analytics from "@/components/Analytics";
 import * as gtag from "@/libs/gtag";
 
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const quicksand = Quicksand({
+    subsets: ["latin"],
+    display: "swap",
+});
 
-export const metadata = {
-  title: "Gusloseimas",
-  description: "A loja mais doce da sua vida!",
-};
+export default function RootLayout({children}) {
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
 
-export default function RootLayout({ children }) {
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url);
-    };
-    Router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      Router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [Router.events]);
+    useEffect(() => {
+        if (pathname) {
+            const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+            gtag.pageview(url);
+        }
+    }, [pathname, searchParams]);
 
-  return (
-    <html lang="pt-Br">
-      <body className={inter.className}>
-        <Analytics />
+    return (
+        <html lang="pt-Br">
+        <body className={quicksand.className}>
+        <Analytics/>
         {children}
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
