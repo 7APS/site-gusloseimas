@@ -76,9 +76,11 @@ export default function Home() {
             <a
                 href={href}
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visite nossa página no ${text}`}
                 className="text-purple-500 hover:text-purple-700 transform hover:translate-y-1 transition-all duration-200"
             >
-                <Image src={src} alt={text} width={width} height={height}/>
+                <Image src={src} alt={`Ícone do ${text}`} width={width} height={height}/>
             </a>
         );
     }
@@ -215,7 +217,7 @@ export default function Home() {
                         <br/>
                         <Image
                             src={katia}
-                            alt="oi"
+                            alt="Foto da Kátia, proprietária da Gusloseimas"
                             width={160}
                             height={160}
                             className="!w-40 !h-40 object-fill mt-4 rounded-full "
@@ -615,13 +617,13 @@ export default function Home() {
                 </div>
             </section>
 
-            <footer>
-                <a className="text-gray-300">
-                    <a href="www.luizcasara.com" target="_blank">
+            <footer className="py-4 text-center">
+                <p className="text-gray-500">
+                    <a href="https://www.luizcasara.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors">
                         7APS
                     </a>
-                    - Copyright © Todos os direitos reservados.
-                </a>
+                    {" - Copyright © "}{new Date().getFullYear()}{" Gusloseimas. Todos os direitos reservados."}
+                </p>
             </footer>
         </div>
     );
